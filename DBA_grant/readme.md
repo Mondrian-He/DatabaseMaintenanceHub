@@ -104,7 +104,7 @@ gsql -p 5432 -d test -U lisa -r
 select * from creditcard_info ;
 ```
 
-<img src="密态权限-grant.assets/image-20240301232850998.png" alt="image-20240301232850998" style="zoom:67%;" />
+<img src="密态权限.assets/image-20240301232850998.png" alt="image-20240301232850998" style="zoom:67%;" />
 
 ### 实验结论
 
@@ -117,6 +117,6 @@ select * from creditcard_info ;
 
 - 密钥存储在`/opt/og/openGauss-server/dest/etc/localkms/`下，四个为一组，可以删除
 
-![image-20240301231403320](密态权限-grant.assets/image-20240301231403320.png)
+![image-20240301231403320](密态权限.assets/image-20240301231403320.png)
 
 CREATE CLIENT MASTER KEY ImgCMK WITH (KEY_STORE = localkms, KEY_PATH = "key_path_value", ALGORITHM = RSA_2048);——所以这个key_path_value是名字？
