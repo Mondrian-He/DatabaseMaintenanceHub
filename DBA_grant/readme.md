@@ -1,6 +1,8 @@
 - [密态权限——授权](#密态权限授权)
   - [创建密态表](#创建密态表)
   - [密态下用户授权](#密态下用户授权)
+    - [实验步骤](#实验步骤)
+    - [实验结论](#实验结论)
   - [注意](#注意)
 
 
@@ -56,6 +58,8 @@ SELECT * FROM gs_client_global_keys;
 
 ## 密态下用户授权
 
+### 实验步骤
+
 1. 登录lisa，在密态下，<u>看得到有这个表，但是禁止select查询</u>
 
 ```
@@ -90,6 +94,29 @@ test=> select * from creditcard_info;
 ERROR(CLIENT): failed to decrypt column encryption key
 ```
 
+4. 启动明文，登录lisa，并进行select语句调用
+
+```
+gsql -p 5432 -d test -U lisa -r
+```
+
+```
+select * from creditcard_info ;
+```
+
+<img src="密态权限-grant.assets/image-20240301232850998.png" alt="image-20240301232850998" style="zoom:67%;" />
+
+### 实验结论
+
+- grant在密态下是成立的
+- 被grant的用户：
+  - 开启密态是看不到的，因为开启密态是要看明文，他没有相关密钥解密不了，所以报错
+  - 开启明文是不会报错的，可以看到数据库内容的密文形式
+
 ## 注意
 
 - 密钥存储在`/opt/og/openGauss-server/dest/etc/localkms/`下，四个为一组，可以删除
+
+![image-20240301231403320](密态权限-grant.assets/image-20240301231403320.png)
+
+CREATE CLIENT MASTER KEY ImgCMK WITH (KEY_STORE = localkms, KEY_PATH = "key_path_value", ALGORITHM = RSA_2048);——所以这个key_path_value是名字？
