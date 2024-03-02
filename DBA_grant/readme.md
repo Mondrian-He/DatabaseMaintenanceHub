@@ -44,7 +44,7 @@ SELECT * FROM gs_client_global_keys;
 
 <img src="密态权限.assets/image-20240301212835572.png" alt="image-20240301212835572" style="zoom:67%;" />
 
-4. 创建加密表，不用连Database，可以直接创，\d可以直接查看
+4. 创建加密表，此时已经连了Postgres数据库，可以直接创，\d可以直接查看数据库内的表
 
 ```sql
  CREATE TABLE creditcard_info (id_number int, name text encrypted with (column_encryption_key = ImgCEK, encryption_type = DETERMINISTIC),credit_card  varchar(19) encrypted with (column_encryption_key = ImgCEK, encryption_type = DETERMINISTIC));
