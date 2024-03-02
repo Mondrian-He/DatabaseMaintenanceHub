@@ -63,7 +63,7 @@ SELECT * FROM gs_client_global_keys;
 1. 登录securedb数据库
 
 ```
-gsql -p 5432 -d securedb -r
+gsql -p 5432 -d securedb -r -C
 ```
 
 2. 创建CMK、CEK
