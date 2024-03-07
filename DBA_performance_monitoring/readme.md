@@ -56,7 +56,7 @@ gsql -p 5432 -d products -U lucy -r -C
 ```
 
 ```
-gsql -p 5432 -d encrypteddb -U tim -r -C
+gsql -p 5432 -d products -U tim -r -C
 ```
 
 
