@@ -1,5 +1,5 @@
 # DatabaseMaintenanceHub
-<img src="https://github.com/Mondrian-He/DatabaseMaintenanceHub/blob/main/pic/1.png" alt="image-20240301212835572" style="zoom:30%;" />
+<img src="https://github.com/Mondrian-He/DatabaseMaintenanceHub/blob/main/pic/1.png" alt="image-20240301212835572" style="zoom:5%;" />
 😎😎😎*Your one-stop hub for all things database maintenance. From performance tuning scripts to backup strategies and disaster recovery plans, this repository aims to empower DBAs with the knowledge and tools needed to excel in their roles. Dive in and start optimizing your database environment today!*
 
 - 😁[DatabaseMaintenanceHub/DBA_backup_restore at main · Mondrian-He/DatabaseMaintenanceHub (github.com)](https://github.com/Mondrian-He/DatabaseMaintenanceHub/tree/main/DBA_backup_restore)——This section focuses on strategies, tools, and best practices for database backup and restoration. The goal is to compare and evaluate the differences and challenges in the backup and restoration processes between handling plaintext and encrypted (cryptographic) databases.
